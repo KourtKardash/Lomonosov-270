@@ -172,7 +172,7 @@ def test(model, dataloader, criterion, device):
 if __name__ == "__main__":
     model = UNet(in_channels=1, out_channels=1)
     device = torch.device(
-        "mps" if torch.backends.mps.is_available() else "cpu"
+        "cuda" if torch.backends.mps.is_available() else "cpu"
     )
     model.to(device)
 

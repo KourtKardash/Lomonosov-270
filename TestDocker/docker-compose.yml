@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  ResunetTraining:
+    image: cell-segmentation:latest
+    command: python3 code/nn.py
+    runtime: nvidia
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=4
+    volumes:
+      - /home/s.krasnova/TestDocker/data:/workspace/data

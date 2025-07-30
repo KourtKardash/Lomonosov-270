@@ -9,6 +9,7 @@ import torchvision.transforms as transforms
 
 from tqdm import tqdm
 
+from ds import generate_dataset
 
 def calculate_iou(pred, target, threshold=0.5):
     pred = (pred > threshold).float()
@@ -170,6 +171,7 @@ def test(model, dataloader, criterion, device):
 
 # Example usage
 if __name__ == "__main__":
+    generate_dataset()
     model = UNet(in_channels=1, out_channels=1)
     device = torch.device(
         "cuda" if torch.cuda.is_available() else "cpu"

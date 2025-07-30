@@ -182,7 +182,7 @@ def generate_image_with_mask(
     return synthetic_image, gt_mask
 
 
-if __name__ == "__main__":
+def generate_dataset():
     # Generate train set
     out_dir = Path("./data/train")
     (out_dir / "images").mkdir(exist_ok=True, parents=True)

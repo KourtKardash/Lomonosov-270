@@ -7,6 +7,8 @@
 Команда сбора образа текущего проекта:
 
 ```bash
+cd TestDocker
+
 docker build -t cell-segmentation .
 ```
 Рекомендуется поднять контейнер и убедиться, что обучение успешно запускается. Все необходимые файлы для запуска текущего проекта внутри контейнера содержатся в папке [TestDocker](https://github.com/KourtKardash/Lomonosov-270/tree/main/TestDocker).
@@ -19,6 +21,10 @@ enroot import -o noisy-cells.sqsh dockerd://cell-segmentation:latest
 ```
 
 Переносим готовый .sqsh образ на кластер.
+
+```bash
+rsync -chavz --partial --progress /home/s.krasnova/noisy-cells.sqsh s02210430@10.36.60.202:/scratch/s02210430/test/noisy-cells.sqsh
+```
 
 ---
 

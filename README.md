@@ -20,7 +20,7 @@ docker build -t cell-segmentation .
 enroot import -o noisy-cells.sqsh dockerd://cell-segmentation:latest
 ```
 
-Переносим готовый .sqsh образ на кластер.
+Переносим готовый .sqsh образ на кластер. Рекомендуется использовать rsync (`sudo apt install rsync`)
 
 ```bash
 rsync -chavz --partial --progress /home/s.krasnova/noisy-cells.sqsh s02210430@10.36.60.202:/scratch/s02210430/test/noisy-cells.sqsh
